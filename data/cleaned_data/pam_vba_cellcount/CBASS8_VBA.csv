@@ -1,0 +1,17 @@
+cbass,temperature,sample,species,bleaching_score_person1,bleaching_score_person2,bleaching_score_person3,bleaching_median,bleaching_mean
+CBASS8,30,T0_1,Pocillipora damicornis,80,80,80,80,80
+CBASS8,30,T0_2,Pocillipora damicornis,60,60,60,60,60
+CBASS8,30,T0_3,Pocillipora damicornis,60,40,60,60,53
+CBASS8,30,T0_4,Pocillipora damicornis,60,40,60,60,53
+CBASS8,33,T1_1,Pocillipora damicornis,80,60,60,60,67
+CBASS8,33,T1_2,Pocillipora damicornis,60,60,60,60,60
+CBASS8,33,T1_3,Pocillipora damicornis,60,60,60,60,60
+CBASS8,33,T1_4,Pocillipora damicornis,60,60,60,60,60
+CBASS8,36,T2_1,Pocillipora damicornis,20,20,20,20,20
+CBASS8,36,T2_2,Pocillipora damicornis,60,40,40,40,47
+CBASS8,36,T2_3,Pocillipora damicornis,60,60,40,60,53
+CBASS8,36,T2_5,Pocillipora damicornis,40,40,20,40,33
+CBASS8,39,T3_1,Pocillipora damicornis,20,60,40,40,40
+CBASS8,39,T3_2,Pocillipora damicornis,40,40,20,40,33
+CBASS8,39,T3_3,Pocillipora damicornis,40,40,20,40,33
+CBASS8,39,T3_4,Pocillipora damicornis,0,20,0,0,7
