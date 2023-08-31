@@ -10,9 +10,9 @@ library(parallel)
 
 # Load all datasets ----
 # cbass
-files_cbass <- list.files(here::here("data", "raw_data", "data_h2o2_adjusted"))
+files_cbass <- list.files(here::here("data", "raw_data", "data_h2o2"))
 cbass <- lapply(files_cbass, function(x)
-  readr::read_csv(here::here("data", "raw_data", "data_h2o2_adjusted", x)))
+  readr::read_csv(here::here("data", "raw_data", "data_h2o2", x)))
 # temperature
 files_temp <- list.files(here::here("data", "raw_data", "hobo_temp_data"))
 temp <- lapply(files_temp, function(x)
