@@ -1,0 +1,54 @@
+---
+output: github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+# Temporal resolution of hydrogen peroxide (H2O2) dynamics during heat stress do not support a causative role in coral bleaching
+
+The goal of this project is to reproduce all analyses and figures of the paper
+
+> Title: Temporal resolution of hydrogen peroxide (H2O2) dynamics during heat stress do not support a causative role in coral bleaching
+> 
+> Authors: Schlotheuber M, Voolstra CR, de Beer D, Camp EF, Klatt JM, Ghilardi M, Neumüller K, Ousley S, Bejarano S
+
+currently under revision at Coral Reefs.
+
+## Content
+
+This repository is structured as follow:
+
+- [:file_folder:data/](https://github.com/MarlenSchlotheuber/CBASS_Microsensor_ROS/tree/CBASS_Microsensor_ROS/data): contains all raw and processed data and images used for Visual Bleaching Assessment (VBA).
+- [:file_folder:R/](https://github.com/MarlenSchlotheuber/CBASS_Microsensor_ROS/tree/CBASS_Microsensor_ROS/R): contains all the R code used to reproduce analyses and figures.
+- [:file_folder:figures/](https://github.com/MarlenSchlotheuber/CBASS_Microsensor_ROS/tree/CBASS_Microsensor_ROS/figures): contains all figures created during the analyses.
+
+## Instructions
+
+- Clone this repository (for those not familiar with GitHub, click on the green button `Code` on the project main page on GitHub and then on `Download ZIP` to download the entire repository, thus unzip it).
+
+- Open the `.Rproj` file in RStudio or open an R session with working directory set to the root of the project.
+
+- Reproduce the entire project by running:
+
+``` r
+# Install dependencies
+devtools::install_deps()
+# Run all scripts
+scripts <- list.files("R/")
+lapply(paste("R", scripts, sep = "/"), source)
+```
+For questions related to the data please contact Marlen Schlotheuber at <marlen.schlotheuber@uni-konstanz.de>.
+For questions related to the code please contact Mattia Ghilardi at <mattia.ghilardi91@gmail.com>.
+
+## Working environment
+
+```{r echo=FALSE}
+sessionInfo()
+```
