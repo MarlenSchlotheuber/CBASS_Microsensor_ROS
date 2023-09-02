@@ -1,0 +1,34 @@
+Package: cbassH2O2coral
+Title: Hydrogen peroxide (H2O2) dynamics during heat stress
+Version: 0.0.0.9000
+Authors@R: 
+    person(given = "Marlen",
+           family = "Schlotheuber",
+           role = c("aut", "cre"),
+           email = "marlen.schlotheuber@uni-konstanz.de",
+           comment = c(ORCID = "YOUR-ORCID-ID"))
+    person(given = "Mattia",
+           family = "Ghilardi",
+           role = c("aut"),
+           email = "mattia.ghilardi91@gmail.com",
+           comment = c(ORCID = "0000-0001-9592-7252"))
+Description: This project contains all the code needed to reproduce results and figures.
+License: MIT + file LICENSE
+Encoding: UTF-8
+LazyData: true
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.2.3
+Imports: 
+    dplyr (>= 1.0.7),
+    drc (>= 3.0.1),
+    ggplot2 (>= 3.4.0),
+    ggpubr (>= 0.4.0),
+    ggtext (>= 0.1.1),
+    grid (>= 4.1.3),
+    here (>= 1.0.1),
+    parallel (>= 4.1.3),
+    patchwork (>= 1.1.1),
+    readr (>= 2.0.1),
+    readxl (>= 1.3.1),
+    stringr (>= 1.4.0),
+    tidyr (>= 1.1.3)
