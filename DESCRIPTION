@@ -5,8 +5,8 @@ Authors@R:
     person(given = "Marlen",
            family = "Schlotheuber",
            role = c("aut", "cre"),
-           email = "marlen.schlotheuber@uni-konstanz.de",
-           comment = c(ORCID = "YOUR-ORCID-ID"))
+           email = "m.schlotheuber@gmail.com",
+           comment = c(ORCID = "0000-0001-6501-4436"))
     person(given = "Mattia",
            family = "Ghilardi",
            role = c("aut"),
