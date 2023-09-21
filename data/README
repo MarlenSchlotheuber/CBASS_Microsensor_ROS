@@ -1,0 +1,11 @@
+Here all microsensor and CBASS data can be found. 
+1. VBA images
+After each CBASS run (8am in the morning the next day) the fragment was removed from the CBASS tank and an images was taken on a colous shart. These images were evaluated by 3 independent people that used an additional Coral Watch colour chart to rate the pigmentation of each fragment from 0%-100%
+
+2.raw_data
+The H2O2 and O2 Microsensors were directly connected to a computer during measurements and the signal and time were recorded every second. The raw microsensor data was saved as a word file and transfered into excel. Here comments during the measurement are part of the data file.
+
+3. cleaned_data
+To clean the data from comments and double data pooints were removed. Afterwards the interference detection was performed to remove wrong singals from the data set.
+
+4.
