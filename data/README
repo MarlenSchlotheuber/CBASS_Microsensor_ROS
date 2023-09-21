@@ -3,7 +3,15 @@ Here all microsensor and CBASS data can be found.
 After each CBASS run (8am in the morning the next day) the fragment was removed from the CBASS tank and an images was taken on a colous shart. These images were evaluated by 3 independent people that used an additional Coral Watch colour chart to rate the pigmentation of each fragment from 0%-100%
 
 2.raw_data
-The H2O2 and O2 Microsensors were directly connected to a computer during measurements and the signal and time were recorded every second. The raw microsensor data was saved as a word file and transfered into excel. Here comments during the measurement are part of the data file.
+Here the raw data can be found.
+Microsensor: data_h2o2: Here the H2O2 Microsensor data can be found. The microsensors were directly connected to a computer during measurements and the signal and time were recorded every second. 
+CBASS: hobo_temp_data: During each CBASS run a HOBO temperature logger was placed within the tank to record the temperature. Here the data set for each CBASS run can be found. 
+CBASS: pam_vba_cell count: During each CBASS run photosynthetic efficiency was measured using a PAM after 30min of dark acclimation. Here the PAM data can be found. After each CBASS run the procent of pigmentation was evaluated by three idenpendent people from the VBA images of each fragment and can be found here. Afterwards the tissue of each fragment was removed and the cell number was counted and normalized to the fragment size. Here the cell count data can be found.
 
 3. cleaned_data
-To clean the data from comments and double data pooints were removed. Afterwards the interference detection was performed to remove wrong singals from the data set.
+Here all data used to create Figure 3 and the Supplement figures can be found.
+Microsensor: h2o2: The raw H2O2 data that was used to clean the data and to perform the interferences detecetion.
+Microsensor: h2o2_no_interferences: The cleaned raw H2O2 dat without comments, double data pooints and interferences.
+Microsensor: light: During the experiment the light was on and partially turned off at 7pm and compeltely turned of at 7:30pm until the the next day 7am. The light intensity data can be found here.
+Microsensor: temperature: During each CBASS run a HOBO temperature logger was placed within the tank to record the temperature. Here the data set for each CBASS run can be found. 
+CBASS: pam_vba_cell count: During each CBASS run photosynthetic efficiency was measured using a PAM after 30min of dark acclimation. Here the PAM data can be found. After each CBASS run the procent of pigmentation was evaluated by three idenpendent people from the VBA images of each fragment and can be found here. Afterwards the tissue of each fragment was removed and the cell number was counted and normalized to the fragment size. Here the cell count data can be found.
