@@ -7,5 +7,3 @@ The H2O2 and O2 Microsensors were directly connected to a computer during measur
 
 3. cleaned_data
 To clean the data from comments and double data pooints were removed. Afterwards the interference detection was performed to remove wrong singals from the data set.
-
-4.
