@@ -47,6 +47,7 @@ data1 <- lapply(1:length(microsensor), function(x)
     full_join(temp[[x]] %>%
                 dplyr::select(temperature, hour, minute, second, day_sec, treatment, fragment)) %>%
     arrange(day_sec) %>%
+    mutate(light_change = if_else(abs(light - lag(light)) > 0, 1, 0)) %>%
     pivot_longer(cols = c(light, o2_conc, h2o2_conc, temperature),
                  names_to = "var",
                  values_to = "value") %>%
@@ -100,6 +101,11 @@ plot_by_treatment <- function(data) {
   # Plot
   data %>%
     ggplot(aes(x = day_sec, y = value)) +
+    geom_vline(data = data %>% filter(light_change == 1),
+               aes(xintercept = day_sec),
+               color = "grey80",
+               linetype = "dashed",
+               linewidth = 0.35) +
     geom_line(aes(colour = var), size = 0.5) +
     scale_x_continuous(breaks = x_breaks$day_sec, labels = x_breaks$hour) +
     facet_grid(rows = vars(var), cols = vars(fragment), scales = "free_y", switch = "y") +
@@ -114,7 +120,7 @@ plot_by_treatment <- function(data) {
           strip.placement.y = "outside",
           plot.title = element_markdown(),
           panel.grid.minor = element_blank(),
-          panel.grid.major = element_line(color = "grey95"),
+          panel.grid.major = element_blank(),
           axis.text = element_text(size = 7))
 }
 
@@ -171,6 +177,11 @@ plot_across_treatments <- function(data) {
   # Plot
   data %>%
     ggplot(aes(x = day_sec, y = value)) +
+    geom_vline(data = data %>% filter(light_change == 1),
+               aes(xintercept = day_sec),
+               color = "grey80",
+               linetype = "dashed",
+               linewidth = 0.35) +
     geom_line(aes(colour = var), size = 0.5) +
     scale_x_continuous(breaks = x_breaks$day_sec, labels = x_breaks$hour) +
     facet_grid(rows = vars(var), cols = vars(treatment), scales = "free_y", switch = "y") +
@@ -183,7 +194,7 @@ plot_across_treatments <- function(data) {
           strip.background.y = element_blank(),
           strip.placement.y = "outside",
           panel.grid.minor = element_blank(),
-          panel.grid.major = element_line(color = "grey95"),
+          panel.grid.major = element_blank(),
           axis.text = element_text(size = 7))
 }
 
@@ -231,7 +242,8 @@ fig3bcd <- ggplot(data2, aes(x = fac_temp, y = value)) +
         strip.background = element_blank(),
         strip.placement = "outside",
         axis.title.y = element_blank(),
-        panel.grid.minor = element_blank())
+        panel.grid.minor = element_blank(),
+        panel.grid.major = element_blank())
 
 ggsave(here::here("figures", "pam_bleaching_cellcount.png"), fig3bcd,
        width = 18, height = 20, units = "cm", dpi = 600, type = "cairo")
@@ -308,9 +320,9 @@ plot_day_night <- function(data) {
 
   # Filter data
   data <- data %>%
-      filter((phase == "Day" & between(day_sec, x_min[[1]], x_max[[1]])) |
-               (phase == "Night" & between(day_sec, x_min[[2]], x_max[[2]]))
-  )
+    filter((phase == "Day" & between(day_sec, x_min[[1]], x_max[[1]])) |
+             (phase == "Night" & between(day_sec, x_min[[2]], x_max[[2]]))
+    )
 
   # Create data frame for x axis breaks
   x_breaks <- data %>%
@@ -322,21 +334,25 @@ plot_day_night <- function(data) {
   # Plot
   data %>%
     ggplot(aes(x = day_sec, y = value)) +
-      geom_line(aes(colour = var), size = 0.5) +
-      scale_x_continuous(breaks = x_breaks$day_sec, labels = x_breaks$hour) +
-      facet_grid(rows = vars(var), cols = vars(phase), scales = "free", switch = "y") +
-      scale_color_manual(values = c("gold", "grey30", "firebrick", "dark blue"), guide = "none") +
-      labs(x = "Time (h)",
-           y = "") +
-      theme_bw() +
-      theme(strip.text.y.left = element_markdown(color = "black"),
-            strip.text.x = element_markdown(color = "black", face = "bold"),
-            strip.background.y = element_blank(),
-            strip.placement.y = "outside",
-            panel.grid.minor = element_blank(),
-            panel.grid.major = element_line(color = "grey95"),
-            axis.text = element_text(size = 7))
-
+    geom_vline(data = data %>% filter(light_change == 1),
+               aes(xintercept = day_sec),
+               color = "grey80",
+               linetype = "dashed",
+               linewidth = 0.35) +
+    geom_line(aes(colour = var), size = 0.5) +
+    scale_x_continuous(breaks = x_breaks$day_sec, labels = x_breaks$hour) +
+    facet_grid(rows = vars(var), cols = vars(phase), scales = "free", switch = "y") +
+    scale_color_manual(values = c("gold", "grey30", "firebrick", "dark blue"), guide = "none") +
+    labs(x = "Time (h)",
+         y = "") +
+    theme_bw() +
+    theme(strip.text.y.left = element_markdown(color = "black"),
+          strip.text.x = element_markdown(color = "black", face = "bold"),
+          strip.background.y = element_blank(),
+          strip.placement.y = "outside",
+          panel.grid.minor = element_blank(),
+          panel.grid.major = element_blank(),
+          axis.text = element_text(size = 7))
 }
 
 # 39F1 - 39F5
