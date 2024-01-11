@@ -3,7 +3,7 @@
 
 # Temporal resolution of hydrogen peroxide (H2O2) dynamics during heat stress do not support a causative role in coral bleaching
 
-The goal of this project is to reproduce all analyses and figures of the
+The goal of this repository is to reproduce all analyses and figures of the
 paper
 
 > Title: Temporal resolution of hydrogen peroxide (H2O2) dynamics during
@@ -12,7 +12,7 @@ paper
 > Authors: Schlotheuber M, Voolstra CR, de Beer D, Camp EF, Klatt JM,
 > Ghilardi M, Neumüller K, Ousley S, Bejarano S
 
-currently under revision at Coral Reefs.
+Link to open access paper: (https://link.springer.com/article/10.1007/s00338-023-02448-7)
 
 ## Content
 
